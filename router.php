@@ -8,6 +8,7 @@
 
 <?php
 require_once 'app/controladores/libro.controlador.php';
+require_once 'app/controladores/autor.controlador.php';
 
 // base_url para redirecciones y base tag
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -30,13 +31,15 @@ switch ($parametros[0]) {
         $controlador->mostrarLibro($parametros[1]);
         break;
     case 'autores':
-       
+       $controlador = new AutorControlador();
+       $controlador->mostrarAutores();
         break;
-    case 'autor':
-        
-        break;
-    case 'inicio sesion':
-    
+    /*case 'librosAutor':
+        $controlador = new LibroControlador();
+        $controlador->mostrarLibrosPorAutor($parametros[1]);
+        break;*/
+    case 'inicio_sesion':
+        echo "HOLAAAAA";
         break;
     default: 
         

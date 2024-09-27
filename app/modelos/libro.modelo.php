@@ -15,6 +15,8 @@ class LibroModelo{
     
         return $libros;
     }
+    
+    
  
     public function obtenerLibro($id) {    
         $consulta = $this->bd->prepare('SELECT * FROM libro WHERE id = ?');
@@ -24,5 +26,15 @@ class LibroModelo{
     
         return $libro;
     }
+    
+    /*public function obtenerLibrosPorAutor($id_autor) {
+        $consulta = $this->bd->prepare('SELECT * FROM libro WHERE id_autor = ?');
+        $consulta->execute([$id_autor]);
+    
+        $libros = $consulta->fetchAll(PDO::FETCH_OBJ); 
+    
+        return $libros;
+    }*/
+
 
 }
