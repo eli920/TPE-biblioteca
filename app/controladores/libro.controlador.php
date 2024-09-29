@@ -31,9 +31,9 @@ class LibroControlador{
             return $this->vista->mostrarLibros($libro);
     }
     
-    /*public function mostrarLibrosPorAutor($id_autor){
+    public function mostrarLibrosPorAutor($id){
 
-        $libros= $this->modelo->obtenerLibrosPorAutor($id_autor);
+        $libros= $this->modelo->obtenerLibrosPorAutor($id);
 
 
         if(!empty($libros))
@@ -42,5 +42,5 @@ class LibroControlador{
             return $this->vista->mostrarError('No se encontró');
         
             
-    }*/
+    }
 }

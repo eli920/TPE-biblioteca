@@ -27,14 +27,14 @@ class LibroModelo{
         return $libro;
     }
     
-    /*public function obtenerLibrosPorAutor($id_autor) {
+    public function obtenerLibrosPorAutor($id) {
         $consulta = $this->bd->prepare('SELECT * FROM libro WHERE id_autor = ?');
-        $consulta->execute([$id_autor]);
+        $consulta->execute([$id]);
     
         $libros = $consulta->fetchAll(PDO::FETCH_OBJ); 
     
         return $libros;
-    }*/
+    }
 
 
 }

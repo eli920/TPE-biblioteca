@@ -5,12 +5,12 @@ class LibroVista {
 
         
         $cantidad = count($libros);
-        //var_dump($libros);
+        var_dump($libros);
         //falta
     }
 
     public function mostrarLibro($libro) {
-        //var_dump($libro);
+        var_dump($libro);
          // Falta
     }
 

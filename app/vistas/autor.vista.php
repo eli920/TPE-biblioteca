@@ -3,6 +3,7 @@ class AutorVista {
     public function mostrarAutores($autores) {
 
         $cantidad = count($autores);
+        var_dump($autores);
    
     }
 

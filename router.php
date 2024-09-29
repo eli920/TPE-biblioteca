@@ -34,10 +34,10 @@ switch ($parametros[0]) {
        $controlador = new AutorControlador();
        $controlador->mostrarAutores();
         break;
-    /*case 'librosAutor':
+    case 'libros_autor':
         $controlador = new LibroControlador();
         $controlador->mostrarLibrosPorAutor($parametros[1]);
-        break;*/
+        break;
     case 'inicio_sesion':
         echo "HOLAAAAA";
         break;
