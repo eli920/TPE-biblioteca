@@ -2,9 +2,7 @@
 class LibroVista {
 
     public function mostrarLibros($libros) {
-
-        
-        $cantidad = count($libros);
+        // $cantidad = count($libros);
         var_dump($libros);
         //falta
     }

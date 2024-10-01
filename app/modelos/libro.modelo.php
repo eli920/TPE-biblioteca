@@ -16,10 +16,8 @@ class LibroModelo{
         return $libros;
     }
     
-    
- 
     public function obtenerLibro($id) {    
-        $consulta = $this->bd->prepare('SELECT * FROM libro WHERE id = ?');
+        $consulta = $this->bd->prepare('SELECT * FROM libro WHERE id_libro = ?');
         $consulta->execute([$id]);   
     
         $libro = $consulta->fetch(PDO::FETCH_OBJ);
