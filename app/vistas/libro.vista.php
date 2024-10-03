@@ -2,14 +2,13 @@
 class LibroVista {
 
     public function mostrarLibros($libros) {
-        // $cantidad = count($libros);
-        var_dump($libros);
-        //falta
-    }
+        //$cantidad = count($libros);
+        require 'templates/lista.libros.phtml';
+    } 
 
     public function mostrarLibro($libro) {
-        var_dump($libro);
-         // Falta
+        //var_dump($libro);
+        require 'templates/mostrar.libro.phtml';
     }
 
     public function mostrarError($error) {

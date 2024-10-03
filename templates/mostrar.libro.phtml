@@ -1,0 +1,25 @@
+<?php require 'templates/plantillas_generales/header.phtml'?>
+
+<div class="container">
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="<?= './img/portada'.$libro->id_libro.'.jpg'?>" class="card-img-top p-4" style="width:350px; heigth:400px;" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body mt-5">
+                    <h2><?= $libro->titulo ?></h2>
+                    <?php if(!empty($libro->sinopsis)):?> <!--si el libro tiene sinopsis se muestra-->
+                        <h4>Sinopsis</h3>
+                        <p><?= $libro->sinopsis ?></p>
+                    <?php endif?>
+                    <p><span>Género: </span><?= $libro->genero ?></p>
+                    <p><span>Editorial: </span><?= $libro->editorial ?></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php require 'templates/plantillas_generales/footer.phtml'?>

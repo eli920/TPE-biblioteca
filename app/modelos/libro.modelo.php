@@ -1,9 +1,9 @@
 <?php
 class LibroModelo{
-    private $bd;
+    protected $bd;
 
     public function __construct() {
-        $this->bd = new PDO('mysql:host=localhost;dbname=tpe-biblioteca;charset=utf8', 'root', '');
+        $this->bd = new PDO('mysql:host=localhost;dbname=biblioteca_prueba;charset=utf8', 'root', '');
     }
 
     public function obtenerLibros() {
@@ -28,9 +28,9 @@ class LibroModelo{
     public function obtenerLibrosPorAutor($id) {
         $consulta = $this->bd->prepare('SELECT * FROM libro WHERE id_autor = ?');
         $consulta->execute([$id]);
+        
     
         $libros = $consulta->fetchAll(PDO::FETCH_OBJ); 
-    
         return $libros;
     }
 

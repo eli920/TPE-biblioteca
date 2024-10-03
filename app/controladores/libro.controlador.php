@@ -28,15 +28,16 @@ class LibroControlador{
         if(!$libro)
             return $this->vista->mostrarError('No se encontró');
         else
-            return $this->vista->mostrarLibros($libro);
+            return $this->vista->mostrarLibro($libro);
     }
     
     public function mostrarLibrosPorAutor($id){
 
         $libros= $this->modelo->obtenerLibrosPorAutor($id);
-
+        //var_dump($libros);
 
         if(!empty($libros))
+            
             return $this->vista->mostrarLibros($libros);
         else
             return $this->vista->mostrarError('No se encontró');

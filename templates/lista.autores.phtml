@@ -1,0 +1,16 @@
+<?php require 'templates/plantillas_generales/header.phtml'?>
+
+<ul class="list-group ">
+<h2>Nuestros Autores</h2>
+<?php foreach ($autores as $autor): ?>
+    <li class="list-group-item m-2" style="width:70%">
+        <div class="container-fluid ">
+            <img src="<?= $autor->imagen_url?>"  class="img-thumbnail m-1" alt="img autor" srcset="">
+            <a href="#" class="fs-2 m-2"><?= $autor->nombre_apellido?></a>
+        </div>
+        
+    </li>
+<?php endforeach?>
+</ul> 
+
+<?php require 'templates/plantillas_generales/footer.phtml'?>

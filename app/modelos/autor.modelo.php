@@ -3,7 +3,7 @@ class AutorModelo {
     private $bd;
 
     public function __construct() {
-        $this->bd = new PDO('mysql:host=localhost;dbname=tpe-biblioteca;charset=utf8', 'root', '');
+        $this->bd = new PDO('mysql:host=localhost;dbname=biblioteca_prueba;charset=utf8', 'root', '');
     }
 
     public function obtenerAutores() {
