@@ -3,7 +3,7 @@ class AutorVista {
     public function mostrarAutores($autores) {
 
         $cantidad = count($autores);
-        require 'templates/lista.autores.phtml';
+        var_dump($autores);
    
     }
 
