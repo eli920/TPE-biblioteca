@@ -53,6 +53,22 @@ switch ($parametros[0]) {
     //     $controlador = new LibroControlador($res);
     //     $controlador->editarLibro($params[1]);
     //     break;
+    case 'listar_autores':
+        // sessionAuthMiddleware($res);
+        $controlador = new AutorControlador();
+        $controlador->listarAutores();
+    case 'agregar_autor':
+        // sessionAuthMiddleware($res);
+        $controlador = new AutorControlador();
+        $controlador->agregarAutor($parametros[1]);
+    case 'eliminar_autor':
+        // sessionAuthMiddleware($res);
+        $controlador = new AutorControlador();
+        $controlador->eliminarAutor($parametros[1]);
+    case 'editar_autor':
+        // sessionAuthMiddleware($res);
+        $controlador = new AutorControlador();
+        $controlador->editarAutor($parametros[1]);
     case 'inicio_sesion':
         echo "HOLAAAAA";
         break;
