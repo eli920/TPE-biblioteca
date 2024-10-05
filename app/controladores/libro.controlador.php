@@ -43,4 +43,22 @@ class LibroControlador{
         
             
     }
+
+    // public function agregarLibro() {
+    //     if (!isset($_POST['titulo']) || empty($_POST['titulo'])) {
+    //         return $this->vista->mostrarError('Falta completar el título');
+    //     }
+    
+    //     if (!isset($_POST['año_publicacion']) || empty($_POST['año_publicacion'])) {
+    //         return $this->vista->mostrarError('Falta completar la prioridad');
+    //     }
+    
+    //     $titulo = $_POST['titulo'];
+    //     $genero = $_POST['genero'];
+    //     $editorial = $_POST['editorial'];
+    //     $año_publicacion = $_POST['año_publicacion'];
+    
+    // }
+
+    
 }
