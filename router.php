@@ -38,21 +38,26 @@ switch ($parametros[0]) {
         $controlador = new LibroControlador();
         $controlador->mostrarLibrosPorAutor($parametros[1]);
         break;
-    // case 'nuevo':
-    //     // sessionAuthMiddleware($res);
-    //     $controlador = new LibroControlador($res);
-    //     $controlador->agregarLibro();
-    //     break;
-    // case 'eliminar':
-    //     // sessionAuthMiddleware($res);
-    //     $controlador = new LibroControlador($res);
-    //     $controlador->eliminarLibro($params[1]);
-    //     break;
-    // case 'editar':
-    //     // sessionAuthMiddleware($res);
-    //     $controlador = new LibroControlador($res);
-    //     $controlador->editarLibro($params[1]);
-    //     break;
+    case 'listar_libros':
+        // sessionAuthMiddleware($res); // Verifica que el usuario esté logueado y setea $res->user o redirige a login
+        $controller = new LibroControlador();
+        $controller->listarLibros();
+        break;
+    case 'nuevo_libro':
+        // sessionAuthMiddleware($res);
+        $controlador = new LibroControlador();
+        $controlador->agregarLibro();
+        break;
+    case 'eliminar_libro':
+        // sessionAuthMiddleware($res);
+        $controlador = new LibroControlador();
+        $controlador->eliminarLibro($parametros[1]);
+        break;
+    case 'editar_libro':
+        // sessionAuthMiddleware($res);
+        $controlador = new LibroControlador();
+        $controlador->editarLibro($parametros[1]);
+        break;
     case 'inicio_sesion':
         echo "HOLAAAAA";
         break;
