@@ -38,21 +38,26 @@ switch ($parametros[0]) {
         $controlador = new LibroControlador();
         $controlador->mostrarLibrosPorAutor($parametros[1]);
         break;
-    // case 'nuevo':
-    //     // sessionAuthMiddleware($res);
-    //     $controlador = new LibroControlador($res);
-    //     $controlador->agregarLibro();
-    //     break;
-    // case 'eliminar':
-    //     // sessionAuthMiddleware($res);
-    //     $controlador = new LibroControlador($res);
-    //     $controlador->eliminarLibro($params[1]);
-    //     break;
-    // case 'editar':
-    //     // sessionAuthMiddleware($res);
-    //     $controlador = new LibroControlador($res);
-    //     $controlador->editarLibro($params[1]);
-    //     break;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     case 'listar_autores':
         // sessionAuthMiddleware($res);
         $controlador = new AutorControlador();
