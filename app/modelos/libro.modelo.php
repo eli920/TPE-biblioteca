@@ -34,5 +34,23 @@ class LibroModelo{
         return $libros;
     }
 
+    public function insertarLibro($titulo, $genero, $editorial, $anio_publicacion, $sinopsis) { 
+        $consulta = $this->bd->prepare('INSERT INTO libro(titulo, genero, editorial, anio_publicacion, siopsis) VALUES (?, ?, ?, ?, ?)');
+        $consulta->execute([$titulo, $genero, $editorial, $anio_publicacion, $sinopsis]);
+        //Obtengo el ide de la última fila que inserte
+        $id = $this->bd->lastInsertId();//Funcion propia de php para obtener último id
+    
+        return $id;
+    }
+ 
+    public function borrarLibro($id) {
+        $consulta = $this->bd->prepare('DELETE FROM libro WHERE id_libro = ?');
+        $consulta->execute([$id]);
+    }
+
+    public function actualizarLibro($id) { //Revisar funcion       
+        $consulta = $this->bd->prepare('UPDATE libro SET titulo = ?, genero = ?, editorial = ?, anio_publicacion = ?, sinopsis = ? WHERE id_libro = ?');
+        $consulta->execute([$id]);
+    }
 
 }
