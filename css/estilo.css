@@ -1,0 +1,18 @@
+.item-autor {
+    width: 70%;
+}
+
+.card-libro {
+    width:500px; 
+    height:400px;
+}
+
+.card-libro img {
+    width:200px; 
+    height: 300px;
+}
+
+.img-libro {
+    width:350px; 
+    height:500px;
+}
