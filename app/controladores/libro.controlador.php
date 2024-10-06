@@ -28,7 +28,7 @@ class LibroControlador{
         if(!$libro)
             return $this->vista->mostrarError('No se encontró');
         else
-            return $this->vista->mostrarLibros($libro);
+            return $this->vista->mostrarLibro($libro);
     }
     
     public function mostrarLibrosPorAutor($id){

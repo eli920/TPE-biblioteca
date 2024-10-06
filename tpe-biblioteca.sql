@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-10-2024 a las 16:18:04
+-- Tiempo de generación: 06-10-2024 a las 02:12:42
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,19 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `autor` (
   `id_autor` int(11) NOT NULL,
-  `nombre_apellido` varchar(45) NOT NULL,
-  `nacionalidad` varchar(45) NOT NULL,
-  `biografia` text NOT NULL
+  `nombre_apellido` varchar(45) DEFAULT NULL,
+  `nacionalidad` varchar(45) DEFAULT NULL,
+  `biografia` text DEFAULT NULL,
+  `imagen_url` varchar(2083) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `autor`
 --
 
-INSERT INTO `autor` (`id_autor`, `nombre_apellido`, `nacionalidad`, `biografia`) VALUES
-(1, 'Guillermo Martínez', 'Argentina', 'Guillermo Martínez (1962-) es un destacado escritor y matemático argentino, conocido por sus novelas y ensayos que combinan elementos de la matemática y el misterio. Nació en Bahía Blanca y estudió matemáticas en la Universidad Nacional del Sur. Su novela más conocida, \"Los crímenes de Oxford\" (2003), explora el vínculo entre el crimen y las matemáticas, y ha sido adaptada al cine. Martínez ha recibido varios premios literarios por su trabajo y es reconocido por su habilidad para entrelazar la precisión matemática con la narrativa literaria.'),
-(2, 'Julio Verne', 'Francés', 'Julio Verne (1828-1905) fue un célebre novelista francés, pionero en el género de la ciencia ficción. Nacido en Nantes, Verne es conocido por sus imaginativas novelas de aventuras y exploraciones, como \"Veinte mil leguas de viaje submarino\" y \"La vuelta al mundo en ochenta días\". Su obra, que combina la ciencia y la tecnología con tramas emocionantes, ha influido profundamente en la literatura de aventuras y la ciencia ficción, estableciendo a Verne como uno de los grandes visionarios de su época.\r\n\r\n\r\n\r\n'),
-(3, 'Alfonsina Storni', 'Argentina', 'Alfonsina Storni (1892-1938) fue una influyente poeta y escritora argentina, nacida en Sala Capriasca, Suiza. Se mudó a Argentina en su infancia y se convirtió en una figura central de la literatura latinoamericana. Reconocida por su aguda crítica social y su enfoque en temas feministas, Storni dejó un legado duradero con su poesía, ensayos y obras de teatro, marcando un importante precedente para las escritoras de su tiempo.');
+INSERT INTO `autor` (`id_autor`, `nombre_apellido`, `nacionalidad`, `biografia`, `imagen_url`) VALUES
+(1, 'Guillermo Martínez', 'Argentina', 'Guillermo Martínez (1962-) es un destacado escritor y matemático argentino, conocido por sus novelas y ensayos que combinan elementos de la matemática y el misterio. Nació en Bahía Blanca y estudió matemáticas en la Universidad Nacional del Sur. Su novela más conocida, \"Los crímenes de Oxford\" (2003), explora el vínculo entre el crimen y las matemáticas, y ha sido adaptada al cine. Martínez ha recibido varios premios literarios por su trabajo y es reconocido por su habilidad para entrelazar la precisión matemática con la narrativa literaria.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXkSgjkrOaShpFgxEmqkiJukJ4ruGufbAV2g&s'),
+(2, 'Julio Verne', 'Francés', 'Julio Verne (1828-1905) fue un célebre novelista francés, pionero en el género de la ciencia ficción. Nacido en Nantes, Verne es conocido por sus imaginativas novelas de aventuras y exploraciones, como \"Veinte mil leguas de viaje submarino\" y \"La vuelta al mundo en ochenta días\". Su obra, que combina la ciencia y la tecnología con tramas emocionantes, ha influido profundamente en la literatura de aventuras y la ciencia ficción, estableciendo a Verne como uno de los grandes visionarios de su época.\r\n\r\n\r\n\r\n', 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQT5Gc93ToeK-TggVoXJ6ts6Bvolqx_vldIrRmh4cqdn11eUahgSoQXEYl9DlWPKIP8iTUg2mfEKlPe2pDj05xYSnJY9-HvWtqNi4vbljQ'),
+(3, 'Alfonsina Storni', 'Argentina', 'Alfonsina Storni (1892-1938) fue una influyente poeta y escritora argentina, nacida en Sala Capriasca, Suiza. Se mudó a Argentina en su infancia y se convirtió en una figura central de la literatura latinoamericana. Reconocida por su aguda crítica social y su enfoque en temas feministas, Storni dejó un legado duradero con su poesía, ensayos y obras de teatro, marcando un importante precedente para las escritoras de su tiempo.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjozmwm8D_X-rQ_OxYQBymvPac10FVBdGjmw&s');
 
 -- --------------------------------------------------------
 
@@ -51,10 +52,10 @@ INSERT INTO `autor` (`id_autor`, `nombre_apellido`, `nacionalidad`, `biografia`)
 
 CREATE TABLE `libro` (
   `id_libro` int(11) NOT NULL,
-  `titulo` varchar(45) NOT NULL,
-  `genero` varchar(45) NOT NULL,
-  `editorial` varchar(45) NOT NULL,
-  `anio_publicacion` int(4) NOT NULL,
+  `titulo` varchar(45) DEFAULT NULL,
+  `genero` varchar(45) DEFAULT NULL,
+  `editorial` varchar(45) DEFAULT NULL,
+  `anio_publicacion` int(4) DEFAULT NULL,
   `sinopsis` text NOT NULL,
   `id_autor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -69,7 +70,7 @@ INSERT INTO `libro` (`id_libro`, `titulo`, `genero`, `editorial`, `anio_publicac
 (3, 'La Última vez', 'Ficción Moderna Y Contemporánea.', 'Grupo Editorial Planeta', 2022, 'Barcelona, años 90. Un notorio escritor argentino, recluido por una enfermedad degenerativa, escribe su última novela y teme no llegar a verla publicada.', 1),
 (4, 'La isla misteriosa', 'Novela, ciencia ficción', 'Pierre-Jules Hetzel', 1974, 'En ella se aprecia la admiración de su autor por la ciencia aplicada, tan presente en toda su obra, sintetizándola a través de uno de sus personajes que encierra en sí mismo el conocimiento y la capacidad de adaptación al medio del hombre: el ingeniero Cyrus Smith (Cyrus Harding en la versión de Agnes Kinloch). Dicho personaje, dotado con un amplio conocimiento general, articula la historia y la hace verosímil. El libro forma parte de una trilogía que además componen Veinte mil leguas de viaje submarino y Los hijos del capitán Grant. Tal como el propio Verne aclaraba a su editor, esta sería «una novela que tratase sobre química»: partiendo prácticamente de cero, los protagonistas consiguen fabricar incluso ácido sulfúrico, uno de los productos químicos más avanzados de la época.', 2),
 (5, 'Veinte mil leguas de viaje submarino ', 'Novela, ciencia ficción', 'Pierre-Jules Hetzel', 1869, 'Veinte mil leguas de viaje submarino es una obra narrada en primera persona por el profesor francés Pierre Aronnax, notable biólogo que es hecho prisionero por el Capitán Nemo y es conducido por los océanos a bordo del submarino Nautilus, en compañía de su criado Conseil o (también llamado depende de la edición) Consejo y el arponero canadiense Ned Land.', 2),
-(6, 'La vuelta al mundo en ochenta días', 'Novela, ciencia ficción', 'Pierre-Jules Hetzel', 1872, '\r\nPortada de una edición francesa editada en 1873.\r\nPhileas Fogg es un adinerado caballero inglés que lleva una tranquila y solitaria vida en Londres. A pesar de su fortuna, Fogg vive modestamente y lleva a cabo sus hábitos y costumbres con una precisión matemática. Se sabe muy poco de su vida social aparte de que es miembro del Reform Club, donde pasa la mayor parte del día. Tras despedir a su sirviente por traerle el agua para afeitarse a una temperatura ligeramente más baja de lo ordenado, Fogg contrata al joven francés Jean Passepartout como sustituto.', 2),
+(6, 'La vuelta al mundo en ochenta días', 'Novela, ciencia ficción', 'Pierre-Jules Hetzel', 1872, '\\r\\nPortada de una edición francesa editada en 1873.\\r\\nPhileas Fogg es un adinerado caballero inglés que lleva una tranquila y solitaria vida en Londres. A pesar de su fortuna, Fogg vive modestamente y lleva a cabo sus hábitos y costumbres con una precisión matemática. Se sabe muy poco de su vida social aparte de que es miembro del Reform Club, donde pasa la mayor parte del día. Tras despedir a su sirviente por traerle el agua para afeitarse a una temperatura ligeramente más baja de lo ordenado, Fogg contrata al joven francés Jean Passepartout como sustituto.', 2),
 (7, 'La inquietud del Rosal', 'Poesía', 'Losada', 1916, '', 3),
 (8, 'Mundo de siete pozos', 'Poesía', 'Losada', 1934, '', 3),
 (9, 'Mariposa', 'Poesía', 'Losada', 1927, '', 3);
