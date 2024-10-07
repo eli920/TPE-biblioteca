@@ -1,0 +1,19 @@
+<?php require 'templates/plantillas_generales/header.phtml'?>
+
+<?php require 'templates/formulario.autor.phtml'?>
+
+<ul class="list-group mt-4">
+<?php foreach($autores as $autor): ?>
+    <li class="list-group-item item-task">
+        <div class="label">
+            <b><?=$autor->id_autor?> | <?=$autor->nombre_apellido ?> |<?= $autor->nacionalidad ?></b>  
+        </div>
+        <div class="actions">
+            <a href="modificar/<?= $autor->id_autor ?>" type="button" class='btn btn-warning btn-sm ml-auto'>Modificar</a>
+            <a href="eliminar/<?= $autor->id_autor ?>" type="button" class='btn btn-danger btn-sm ml-auto'>Borrar</a>
+        </div>
+    </li>
+<?php endforeach ?>
+</ul>
+
+<?php require 'templates/plantillas_generales/footer.phtml'?>

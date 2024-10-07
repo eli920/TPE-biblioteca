@@ -15,4 +15,22 @@ class AutorModelo {
         return $autores;
     }
 
+    public function insertarAutor($nombre_apellido, $nacionalidad, $biografia, $imagen_url) {
+        $consulta = $this->bd-> prepare('INSERT INTO autor(nombre_apellido, nacionalidad, biografia, imagen_url) VALUES (?, ?, ?, ?)');
+        $consulta -> execute([$nombre_apellido, $nacionalidad, $biografia, $imagen_url]);
+
+        $id = $this->bd->lastInsertId();
+
+        return $id;
+    }
+ 
+    public function borrarAutor($id) {
+        $consulta = $this->bd->prepare('DELETE FROM autor WHERE id_autor = ?');
+        $consulta->execute([$id]);
+    }
+
+    public function actualizarAutor($id) {        
+        $consulta = $this->bd->prepare('UPDATE autor SET nombreApellido = ?, nacionalidad = ?, biografia = ?, imagen_url = ? WHERE id_autor = ?');
+        $consulta->execute([$id]);
+    }
 }

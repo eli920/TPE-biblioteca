@@ -32,10 +32,10 @@ class LibroModelo{
         $libros = $consulta->fetchAll(PDO::FETCH_OBJ); 
     
         return $libros;
-    }
+    }  
 
     public function insertarLibro($titulo, $genero, $editorial, $anio_publicacion, $sinopsis) { 
-        $consulta = $this->bd->prepare('INSERT INTO libro(titulo, genero, editorial, anio_publicacion, siopsis) VALUES (?, ?, ?, ?, ?)');
+        $consulta = $this->bd->prepare('INSERT INTO libro(titulo, genero, editorial, anio_publicacion, sinopsis) VALUES (?, ?, ?, ?, ?)');
         $consulta->execute([$titulo, $genero, $editorial, $anio_publicacion, $sinopsis]);
         //Obtengo el ide de la última fila que inserte
         $id = $this->bd->lastInsertId();//Funcion propia de php para obtener último id
