@@ -14,4 +14,9 @@ class LibroVista {
         require 'msg.error.phtml';
     }
 
+    public function mostrarListaLibros($libros) {
+        require 'templates/listar.libros.phtml';
+    }
+
+
 }
