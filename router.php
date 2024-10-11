@@ -44,28 +44,28 @@ switch ($parametros[0]) {
         $controlador->mostrarLibrosPorAutor($parametros[1]);
         break;
     case 'listar_libros':
-        // autentIntermedia($res);
-        $controlador = new LibroControlador();
+        autentIntermedia($res);
+        $controlador = new LibroControlador($res);
         $controlador->listarLibros();
         break;
     case 'mostrar_formulario_libro':
-        // autentIntermedia($res);
-        $controlador = new LibroControlador();
+        autentIntermedia($res);
+        $controlador = new LibroControlador($res);
         $controlador->mostrarFormulario();
         break;    
     case 'nuevo_libro':
-        // autentIntermedia($res);
-        $controlador = new LibroControlador();
+        autentIntermedia($res);
+        $controlador = new LibroControlador($res);
         $controlador->agregarLibro();
         break;
     case 'eliminar_libro':
-        // autentIntermedia($res);
-        $controlador = new LibroControlador();
+        autentIntermedia($res);
+        $controlador = new LibroControlador($res);
         $controlador->eliminarLibro($parametros[1]);
         break;
     case 'editar_libro':
-        // autentIntermedia($res);
-        $controlador = new LibroControlador();
+        autentIntermedia($res);
+        $controlador = new LibroControlador($res);
         $controlador->editarLibro($parametros[1]);
         break;
     case 'listar_autores':

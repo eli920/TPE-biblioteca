@@ -8,9 +8,9 @@ class LibroControlador{
     private $vista;
     private $modeloAutores; //Creo una variable para guardar los autores que me traigo en un arreglo
 
-    public function __construct() {
+    public function __construct($res = null) {//Si le paso la respuesta acá me tirar error las acciones píblicas
         $this->modelo= new LibroModelo();
-        $this->vista= new LibroVista();
+        $this->vista= new LibroVista($res ? $res->usuario: null);
         $this->modeloAutores= new AutorModelo();
     }
    

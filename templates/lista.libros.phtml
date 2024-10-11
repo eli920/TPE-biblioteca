@@ -12,7 +12,7 @@
                         <img src="<?= './img/portada'.$libro->id_libro.'.jpg'?>" alt="imagen del libro <?= $libro->titulo ?>">
                         
                     </div>
-                    <a href="#" class="btn btn-primary">ver detalle</a> <!--PREGUNTAR COMO REDIRECCIONAR AL ITEM EN CONCRETO-->
+                    <a href="../router.php/libro/<?= $libro->id_libro ?>" class="btn btn-primary">ver detalle</a> <!--PREGUNTAR COMO REDIRECCIONAR AL ITEM EN CONCRETO-->
             </div>
         <?php 
         endforeach ?>

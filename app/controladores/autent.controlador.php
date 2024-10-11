@@ -16,6 +16,7 @@ class AutentControlador {
         return $this->vista->mostrarAcceso();
     }
 
+   
     public function iniciarSesion() {
         
         if (!isset($_POST['usuario']) || empty($_POST['usuario'])) {

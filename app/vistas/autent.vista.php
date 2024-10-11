@@ -7,4 +7,5 @@ class AutentVista {
         require 'templates/form.acceso.phtml';
     }
 
+
 }
