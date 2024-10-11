@@ -1,20 +1,19 @@
 <?php require 'templates/plantillas_generales/header.phtml'?>
 
-<?php require 'templates/formulario.libro.phtml'?>
 
 <ul class="list-group mt-4">
 <?php foreach($libros as $libro): ?>
     <li class="list-group-item item-task">
         <div class="label">
             <b><?=$libro->id_libro?> | <?=$libro->titulo ?> |<?= $libro->genero ?> | <?= $libro->editorial ?> |<?= $libro->anio_publicacion ?>
-            <?= $libro->sinopsis ?></b>  
+            <?= $libro->sinopsis ?> | <?= $libro->id_autor ?></b>  
         </div>
         <div class="actions">
-            <a href="modificar/<?= $libro->id_libro ?>" type="button" class='btn btn-warning btn-sm ml-auto'>Modificar</a>
-            <a href="eliminar/<?= $libro->id_libro ?>" type="button" class='btn btn-danger btn-sm ml-auto'>Borrar</a>
+            <a href="editar_libro/<?= $libro->id_libro?>" type="button" class='btn btn-warning btn-sm ml-auto'>Modificar</a>
+            <a href="eliminar_libro/<?= $libro->id_libro?>" type="button" class='btn btn-danger btn-sm ml-auto'>Borrar</a>
         </div>
     </li>
 <?php endforeach ?>
 </ul>
 
-<?php require 'templates/plantillas_generales/footer.phtml'?>?>
+<?php require 'templates/plantillas_generales/footer.phtml'?>

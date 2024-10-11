@@ -1,28 +1,35 @@
+
+
 <div class="container">
-    <h1>Agregar/modificar libro</h1>
-    <form>
+    <h1><?= $libro ? 'Modificar libro' : 'Agregar libro' ?></h1>
+    <form action="<?= $libro ? 'editar_libro/' . $libro->id_libro : 'nuevo_libro' ?>" method="POST">
         <div class="mb-3">
             <label for="titulo" class="form-label">Título</label>
-            <input type="text" class="form-control" id="titulo">
+            <input type="text" class="form-control" name="titulo" value="<?= $libro ? $libro->titulo : '' ?>">
         </div>
         <div class="mb-3">
             <label for="genero" class="form-label">Género</label>
-            <input type="text" class="form-control" id="genero">
+            <input type="text" class="form-control" name="genero" value="<?= $libro ? $libro->genero : '' ?>">
         </div>
         <div class="mb-3">
             <label class="form-label" for="editorial">Editorial</label>
-            <input type="text" class="form-control" id="editorial">
-            
+            <input type="text" class="form-control" name="editorial" value="<?= $libro ? $libro->editorial : '' ?>">
         </div>
         <div class="mb-3">
             <label class="form-label" for="anio">Año de Publicación</label>
-            <input type="number" class="form-control" id="anio">
-            
+            <input type="number" class="form-control" name="anio_publicacion" value="<?= $libro ? $libro->anio_publicacion : '' ?>">
         </div>
         <div class="mb-3">
             <label class="form-label" for="sinopsis">Sinopsis</label>
-            <input type="text" class="form-control" id="sinopsis">
-            
+            <input type="text" class="form-control" name="sinopsis" value="<?= $libro ? $libro->sinopsis : '' ?>">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="id_autor">Autor</label>
+            <select name="id_autor">
+                <?php foreach ($autores as $autor) : ?>
+                    <option value="<?= $autor->id_autor ?>" <?= $libro && $libro->id_autor == $autor->id_autor ? 'selected' : '' ?>><?= $autor->nombre_apellido ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <button type="submit" class="btn btn-success">Enviar</button>
     </form>

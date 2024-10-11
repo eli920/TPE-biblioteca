@@ -1,26 +1,31 @@
 <?php
-require_once 'config.php';
+// require_once 'config.php';
 
 class LibroModelo{
     private $bd;
 
     public function __construct() {
-        $this->bd = new PDO(
-            "mysql:host=".MYSQL_HOST .
-            ";dbname=".MYSQL_DB.";charset=utf8", 
-            MYSQL_USER, MYSQL_PASS);
-            $this->_desplegar();
-    }
+        $this->bd = new PDO('mysql:host=localhost;dbname=tpe-biblioteca;charset=utf8', 'root', '');
+     }
+  
 
-    private function _desplegar() {
-        $consulta = $this->bd->query('SHOW TABLES');
-        $tablas = $consulta->fetchAll();
-        if(count($tablas) == 0) {
-            $sql = <<<END
-            END;
-            $this->bd->query($sql);
-        }
-    }
+    // public function __construct() {
+    //     $this->bd = new PDO(
+    //         "mysql:host=".MYSQL_HOST .
+    //         ";dbname=".MYSQL_DB.";charset=utf8", 
+    //         MYSQL_USER, MYSQL_PASS);
+    //         $this->_desplegar();
+    // }
+
+    // private function _desplegar() {
+    //     $consulta = $this->bd->query('SHOW TABLES');
+    //     $tablas = $consulta->fetchAll();
+    //     if(count($tablas) == 0) {
+    //         $sql = <<<END
+    //         END;
+    //         $this->bd->query($sql);
+    //     }
+    // }
 
     public function obtenerLibros() {
 
@@ -39,8 +44,10 @@ class LibroModelo{
         $libro = $consulta->fetch(PDO::FETCH_OBJ);
     
         return $libro;
+
     }
-    
+
+ 
     public function obtenerLibrosPorAutor($id) {
         $consulta = $this->bd->prepare('SELECT * FROM libro WHERE id_autor = ?');
         $consulta->execute([$id]);
@@ -50,9 +57,9 @@ class LibroModelo{
         return $libros;
     }  
 
-    public function insertarLibro($titulo, $genero, $editorial, $anio_publicacion, $sinopsis) { 
-        $consulta = $this->bd->prepare('INSERT INTO libro(titulo, genero, editorial, anio_publicacion, sinopsis) VALUES (?, ?, ?, ?, ?)');
-        $consulta->execute([$titulo, $genero, $editorial, $anio_publicacion, $sinopsis]);
+    public function insertarLibro($titulo, $genero, $editorial, $anio_publicacion, $sinopsis, $autor) { 
+        $consulta = $this->bd->prepare('INSERT INTO libro (titulo, genero, editorial, anio_publicacion, sinopsis, id_autor) VALUES (?, ?, ?, ?, ?,?)');
+        $consulta->execute([$titulo, $genero, $editorial, $anio_publicacion, $sinopsis, $autor]);
         //Obtengo el ide de la última fila que inserte
         $id = $this->bd->lastInsertId();//Funcion propia de php para obtener último id
     
@@ -64,9 +71,10 @@ class LibroModelo{
         $consulta->execute([$id]);
     }
 
-    public function actualizarLibro($id) { //Revisar funcion       
-        $consulta = $this->bd->prepare('UPDATE libro SET titulo = ?, genero = ?, editorial = ?, anio_publicacion = ?, sinopsis = ? WHERE id_libro = ?');
-        $consulta->execute([$id]);
+    public function actualizarLibro($id, $titulo, $genero, $editorial, $anio_publicacion, $sinopsis, $autor) {      
+        $consulta = $this->bd->prepare('UPDATE libro SET titulo = ?, genero = ?, editorial = ?, anio_publicacion = ?, sinopsis = ?, id_autor = ? WHERE id_libro = ?');
+        $consulta->execute([$id, $titulo, $genero, $editorial, $anio_publicacion, $sinopsis, $autor]);
     }
 
+    
 }

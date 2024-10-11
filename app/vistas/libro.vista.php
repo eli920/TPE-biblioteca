@@ -11,11 +11,15 @@ class LibroVista {
     }
 
     public function mostrarError($error) {
-        require 'msg.error.phtml';
+       require 'templates/msg.error.phtml';
     }
 
     public function mostrarListaLibros($libros) {
         require 'templates/listar.libros.phtml';
+    }
+
+    public function mostrarForm($autores, $libro = null) {
+        require 'templates/formulario.libro.phtml';
     }
 
 

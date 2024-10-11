@@ -1,7 +1,6 @@
 <?php
 require_once('./app/modelos/autor.modelo.php');
 require_once('./app/vistas/autor.vista.php');
-//require_once('libro.controlador.php');
 
 class AutorControlador {
     private $modelo;

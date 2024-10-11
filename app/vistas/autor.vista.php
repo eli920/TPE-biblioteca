@@ -7,9 +7,9 @@ class AutorVista {
    
     }
 
-    public function mostrarError($error) {
-        require 'msg.error.phtml';
-    }
+    // public function mostrarError($error) {
+    //     require 'msg.error.phtml';
+    // }
 
     public function mostrarListaAutores($autores) {
         require 'templates/listar.autores.phtml';
