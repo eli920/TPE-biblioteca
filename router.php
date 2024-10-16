@@ -91,7 +91,6 @@ switch ($parametros[0]) {
     case 'iniciar_sesion':
         $controlador = new AutentControlador();
         $controlador->iniciarSesion();
-        var_dump("hola");
         break;
     case 'cerrar_sesion':
         $controlador = new AutentControlador();
@@ -100,5 +99,5 @@ switch ($parametros[0]) {
     break;
     default: 
         
-        break;
+    break;
 }

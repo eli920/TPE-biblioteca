@@ -32,7 +32,7 @@ class AutentControlador {
     
         // Verificar que el usuario está en la base de datos
         $usuarioBD = $this->modelo->obtenerUsuario($usuario);
-        var_dump($usuarioBD); 
+        
 
         if($usuarioBD && password_verify($contrasenia, $usuarioBD->contrasenia)){
             // Guardo en la sesión el ID del usuario

@@ -2,7 +2,7 @@
 
 <div class="container">
     <h1><?= $libro ? 'Modificar libro' : 'Agregar libro' ?></h1>
-    <form action="<?= $libro ? 'editar_libro/' . $libro->id_libro : 'nuevo_libro' ?>" method="POST">
+    <form action="<?= $libro ? BASE_URL . 'editar_libro/' . $libro->id_libro : 'nuevo_libro' ?>" method="POST">
         <div class="mb-3">
             <label for="titulo" class="form-label">Título</label>
             <input type="text" class="form-control" name="titulo" value="<?= $libro ? $libro->titulo : '' ?>">

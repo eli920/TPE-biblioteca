@@ -8,11 +8,11 @@
             <div class="card p-2 m-2 ">
                     <div class="card-body card-libro">
                         <h5 class="card-title"><?= $libro->titulo ?></h5>
-                        <!--PREGUNTAR, si pongo './img/portada' se muestran las imagenes todos los libros, pero no funciona cuando se llama a los libros de un autor en especifico. si pongo '../img/portada' (con doble punto) se muestran las imagenes de libros de un autor en especifico, pero no se muestran cuando son todos los libros-->
-                        <img src="<?= './img/portada'.$libro->id_libro.'.jpg'?>" alt="imagen del libro <?= $libro->titulo ?>">
-                        
+                        <img src="<?= BASE_URL .'./img/portada'. $libro->id_libro.'.jpg'?>" alt="imagen del libro <?= $libro->titulo ?>">
+                        <h6 class="card-subtitle"><?= $libro->autor->nombre_apellido ?></h6>
                     </div>
-                    <a href="../router.php/libro/<?= $libro->id_libro ?>" class="btn btn-primary">ver detalle</a> <!--PREGUNTAR COMO REDIRECCIONAR AL ITEM EN CONCRETO-->
+                    <a href="<?= BASE_URL . 'libro/' . $libro->id_libro ?>"  class="btn btn-primary">ver detalle</a> 
+                    
             </div>
         <?php 
         endforeach ?>

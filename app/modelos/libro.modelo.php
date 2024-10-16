@@ -11,10 +11,8 @@ class LibroModelo{
 
     // public function __construct() {
     //     $this->bd = new PDO(
-    //         "mysql:host=".MYSQL_HOST .
-    //         ";dbname=".MYSQL_DB.";charset=utf8", 
-    //         MYSQL_USER, MYSQL_PASS);
-    //         $this->_desplegar();
+    //         "mysql:host=".MYSQL_HOST . ";dbname=".MYSQL_DB.";charset=utf8",  MYSQL_USER, MYSQL_PASS);
+    //     $this->_desplegar();
     // }
 
     // private function _desplegar() {
@@ -26,6 +24,7 @@ class LibroModelo{
     //         $this->bd->query($sql);
     //     }
     // }
+    //
 
     public function obtenerLibros() {
 
@@ -42,7 +41,7 @@ class LibroModelo{
         $consulta->execute([$id]);   
     
         $libro = $consulta->fetch(PDO::FETCH_OBJ);
-    
+        
         return $libro;
 
     }
@@ -53,7 +52,7 @@ class LibroModelo{
         $consulta->execute([$id]);
     
         $libros = $consulta->fetchAll(PDO::FETCH_OBJ); 
-    
+       
         return $libros;
     }  
 
@@ -73,7 +72,7 @@ class LibroModelo{
 
     public function actualizarLibro($id, $titulo, $genero, $editorial, $anio_publicacion, $sinopsis, $autor) {      
         $consulta = $this->bd->prepare('UPDATE libro SET titulo = ?, genero = ?, editorial = ?, anio_publicacion = ?, sinopsis = ?, id_autor = ? WHERE id_libro = ?');
-        $consulta->execute([$id, $titulo, $genero, $editorial, $anio_publicacion, $sinopsis, $autor]);
+        $consulta->execute([$titulo, $genero, $editorial, $anio_publicacion, $sinopsis, $autor, $id]);
     }
 
     

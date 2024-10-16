@@ -6,7 +6,7 @@
     <li class="list-group-item item-task">
         <div class="label">
             <b><?=$libro->id_libro?> | <?=$libro->titulo ?> |<?= $libro->genero ?> | <?= $libro->editorial ?> |<?= $libro->anio_publicacion ?>
-            <?= $libro->sinopsis ?> | <?= $libro->id_autor ?></b>  
+            <?= $libro->sinopsis ?> | <?= $libro->autor->nombre_apellido ?></b>  
         </div>
         <div class="actions">
             <a href="editar_libro/<?= $libro->id_libro?>" type="button" class='btn btn-warning btn-sm ml-auto'>Modificar</a>

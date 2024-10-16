@@ -13,9 +13,20 @@ class LibroControlador{
         $this->vista= new LibroVista($res ? $res->usuario: null);
         $this->modeloAutores= new AutorModelo();
     }
+
+    
    
     public function mostrarLibros(){
         $libros= $this->modelo->obtenerLibros();
+        $autores = $this->modeloAutores->obtenerAutores();
+
+        foreach ($libros as $libro) {
+            foreach($autores as $aux){
+                if($aux->id_autor == $libro->id_autor){
+                    $libro->autor = $aux;
+                }
+            }
+        }
 
         if(!empty($libros))
             return $this->vista->mostrarLibros($libros);
@@ -37,6 +48,7 @@ class LibroControlador{
     public function mostrarLibrosPorAutor($id){
 
         $libros= $this->modelo->obtenerLibrosPorAutor($id);
+        
 
 
         if(!empty($libros))
@@ -49,6 +61,15 @@ class LibroControlador{
 
     public function listarLibros(){
         $libros= $this->modelo->obtenerLibros();
+        $autores = $this->modeloAutores->obtenerAutores();
+
+        foreach ($libros as $libro) {
+            foreach($autores as $aux){
+                if($aux->id_autor == $libro->id_autor){
+                    $libro->autor = $aux;
+                }
+            }
+        }
 
         if(!empty($libros))
             return $this->vista->mostrarListaLibros($libros);//Se genera en vista
@@ -101,14 +122,12 @@ class LibroControlador{
     }
 
     public function editarLibro($id) {
-       
         $libro = $this->modelo->obtenerLibro($id);
-        var_dump($id);
 
         if (!$libro) {
             return $this->vista->mostrarError("No existe el libro");
         }
-
+        var_dump($libro);
         $this->mostrarFormulario($libro); // Muestra el formulario con los datos del libro
 
        //Si el formulario ha sido enviado
