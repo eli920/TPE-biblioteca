@@ -32,7 +32,6 @@ class LibroModelo{
         $consulta->execute();
     
         $libros = $consulta->fetchAll(PDO::FETCH_OBJ); 
-    
         return $libros;
     }
     
@@ -43,7 +42,6 @@ class LibroModelo{
         $libro = $consulta->fetch(PDO::FETCH_OBJ);
         
         return $libro;
-
     }
 
  

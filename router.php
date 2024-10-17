@@ -39,6 +39,10 @@ switch ($parametros[0]) {
        $controlador = new AutorControlador();
        $controlador->mostrarAutores();
         break;
+    case 'autor'://Se agrega case, para poder obtener un autor y usar la funcion para editar
+        $controlador = new AutorControlador();
+        $controlador->mostrarAutor($parametros[1]);
+        break;
     case 'libros_autor':
         $controlador = new LibroControlador();
         $controlador->mostrarLibrosPorAutor($parametros[1]);
@@ -69,19 +73,28 @@ switch ($parametros[0]) {
         $controlador->editarLibro($parametros[1]);
         break;
     case 'listar_autores':
-        $controlador = new AutorControlador();
+        autentIntermedia($res);
+        $controlador = new AutorControlador($res);
         $controlador->listarAutores();
         break;
+    case 'mostrar_formulario_autor':
+        autentIntermedia($res);
+        $controlador = new AutorControlador($res);
+        $controlador->mostrarFormulario();
+        break; 
     case 'nuevo_autor':
-        $controlador = new AutorControlador();
+        autentIntermedia($res);
+        $controlador = new AutorControlador($res);
         $controlador->agregarAutor();
         break;
     case 'eliminar_autor':
-        $controlador = new AutorControlador();
+        autentIntermedia($res);
+        $controlador = new AutorControlador($res);
         $controlador->eliminarAutor($parametros[1]);
         break;
     case 'editar_autor':
-        $controlador = new AutorControlador();
+        autentIntermedia($res);
+        $controlador = new AutorControlador($res);
         $controlador->editarAutor($parametros[1]);
         break;
     case 'mostrar_acceso':
@@ -95,9 +108,8 @@ switch ($parametros[0]) {
     case 'cerrar_sesion':
         $controlador = new AutentControlador();
         $controlador->cerrarSesion();
-    
     break;
     default: 
-        
+        //Falta poner que se va a mostrar por default
     break;
 }

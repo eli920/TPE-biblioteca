@@ -1,13 +1,12 @@
 <?php
-// require_once 'config.php';
+require_once 'config.php';
 
 class AutorModelo {
     private $bd;
 
     public function __construct() {
         $this->bd = new PDO('mysql:host=localhost;dbname=tpe-biblioteca;charset=utf8', 'root', '');
-     }
-  
+    }
 
     // public function __construct() {
     //     $this->bd = new PDO(
@@ -35,6 +34,15 @@ class AutorModelo {
         return $autores;
     }
 
+    public function obtenerAutor($id) {
+        $consulta = $this->bd->prepare('SELECT * FROM autor  WHERE id_autor = ?');
+        $consulta->execute([$id]);
+
+        $autor = $consulta->fetch(PDO::FETCH_OBJ); 
+        return $autor;
+    }
+
+
     public function insertarAutor($nombre_apellido, $nacionalidad, $biografia, $imagen_url) {
         $consulta = $this->bd-> prepare('INSERT INTO autor(nombre_apellido, nacionalidad, biografia, imagen_url) VALUES (?, ?, ?, ?)');
         $consulta -> execute([$nombre_apellido, $nacionalidad, $biografia, $imagen_url]);
@@ -49,8 +57,8 @@ class AutorModelo {
         $consulta->execute([$id]);
     }
 
-    public function actualizarAutor($id) {        
-        $consulta = $this->bd->prepare('UPDATE autor SET nombreApellido = ?, nacionalidad = ?, biografia = ?, imagen_url = ? WHERE id_autor = ?');
-        $consulta->execute([$id]);
+    public function actualizarAutor($id, $nombre_apellido, $nacionalidad, $biografia, $imagen_url) {    //Se agregan parametros    
+        $consulta = $this->bd->prepare('UPDATE autor SET nombre_apellido = ?, nacionalidad = ?, biografia = ?, imagen_url = ? WHERE id_autor = ?');
+        $consulta->execute([$nombre_apellido, $nacionalidad, $biografia, $imagen_url, $id]);
     }
 }

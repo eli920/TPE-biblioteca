@@ -7,12 +7,20 @@ class AutorVista {
    
     }
 
-    // public function mostrarError($error) {
-    //     require 'msg.error.phtml';
-    // }
+    public function mostrarAutor($autor) {
+        require 'templates/mostrar.autor.phtml';
+    }
+
+    public function mostrarError($error) {
+        require 'templates/msg.error.phtml';
+     }
 
     public function mostrarListaAutores($autores) {
         require 'templates/listar.autores.phtml';
+    }
+
+    public function mostrarForm($autor = null) {
+        require 'templates/formulario.autor.phtml';
     }
 
 }
