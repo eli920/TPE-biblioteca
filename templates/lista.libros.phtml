@@ -2,21 +2,21 @@
 
 <div class="container">
     <h2 class="pb-4">Nuestros libros</h2>
-    <div class=" row row-cols-md-4 g-4">
+    <div class="row row-cols-md-4 g-4">
         <?php 
             foreach($libros as $libro): ?>
-            <div class="card p-2 m-2 ">
-                    <div class="card-body card-libro">
-                        <h5 class="card-title"><?= $libro->titulo ?></h5>
-                        <img src="<?= BASE_URL .'./img/portada'. $libro->id_libro.'.jpg'?>" alt="imagen del libro <?= $libro->titulo ?>">
-                        <h6 class="card-subtitle"><?= $libro->autor->nombre_apellido ?></h6>
+            <div class="card p-0 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card-body card-libro ">
+                        <h5 class="card-title m-0"><?= $libro->titulo ?></h5>
+                        <img src="<?= BASE_URL .'./img/portada'. $libro->id_libro.'.jpg'?>" alt="imagen del libro <?= $libro->titulo ?>" class="mt-3">
+                        <h6 class="card-subtitle mt-3"><?= $libro->autor->nombre_apellido ?></h6>
                     </div>
-                    <a href="<?= BASE_URL . 'libro/' . $libro->id_libro ?>"  class="btn btn-primary">ver detalle</a> 
+                    <a href="<?= BASE_URL . 'libro/' . $libro->id_libro ?>"  class="btn btn-primary m-3 w-50">ver detalle</a> 
                     
             </div>
         <?php 
         endforeach ?>
-    </div>
+    </div> 
 </div>
 
 <?php require 'templates/plantillas_generales/footer.phtml'?>

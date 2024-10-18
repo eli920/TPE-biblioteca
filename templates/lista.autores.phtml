@@ -6,7 +6,7 @@
     <li class="list-group-item m-2 item-autor">
         <div class="container-fluid ">
             <img src="<?= $autor->imagen_url?>"  class="img-thumbnail m-1" alt="img autor" srcset="">
-            <a href="#" class="fs-2 m-2"><?= $autor->nombre_apellido?></a>
+            <a href="<?= BASE_URL . 'libros_autor/' . $autor->id_autor ?>" class="fs-2 m-2"><?= $autor->nombre_apellido?></a>
         </div>
         
     </li>

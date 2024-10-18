@@ -41,6 +41,7 @@ class AutentControlador {
             $_SESSION['usuario'] = $usuarioBD->usuario;
             $_SESSION['LAST_ACTIVITY'] = time();
     
+              
             header('Location: ' . BASE_URL);
 
         } else {

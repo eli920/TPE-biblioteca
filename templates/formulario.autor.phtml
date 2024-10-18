@@ -1,3 +1,5 @@
+<?php require 'templates/plantillas_generales/header.phtml'?>
+
 <div class="container">
     <h1><?= $autor ? 'Modificar autor' : 'Agregar autor' ?></h1>
     <form action="<?= $autor ? BASE_URL . 'editar_autor/' . $autor->id_autor : 'nuevo_autor' ?>" method="POST">
@@ -22,3 +24,4 @@
         <button type="submit" class="btn btn-success">Enviar</button>
     </form>
 </div>
+<?php require 'templates/plantillas_generales/footer.phtml'?>
