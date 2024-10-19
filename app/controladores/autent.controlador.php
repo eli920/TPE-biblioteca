@@ -15,37 +15,42 @@ class AutentControlador {
         // Muestro el formulario de login
         return $this->vista->mostrarAcceso();
     }
-
-   
+    
     public function iniciarSesion() {
         
-        if (!isset($_POST['usuario']) || empty($_POST['usuario'])) {
-            return $this->vista->mostrarAcceso('Falta completar el nombre de usuario');
-        }
-    
-        if (!isset($_POST['contrasenia']) || empty($_POST['contrasenia'])) {
-            return $this->vista->mostrarAcceso('Falta completar la contraseña');
-        }
-    
-        $usuario = $_POST['usuario'];
-        $contrasenia = $_POST['contrasenia'];
-    
-        // Verificar que el usuario está en la base de datos
-        $usuarioBD = $this->modelo->obtenerUsuario($usuario);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
+
+            if (!isset($_POST['usuario']) || empty($_POST['usuario'])) {
+                return $this->vista->mostrarAcceso('Falta completar el nombre de usuario');
+            }
         
+            if (!isset($_POST['contrasenia']) || empty($_POST['contrasenia'])) {
+                return $this->vista->mostrarAcceso('Falta completar la contraseña');
+            }
+        
+            $usuario = $_POST['usuario'];
+            $contrasenia = $_POST['contrasenia'];
+        
+            // Verificar que el usuario está en la base de datos
+            $usuarioBD = $this->modelo->obtenerUsuario($usuario);
+            
 
-        if($usuarioBD && password_verify($contrasenia, $usuarioBD->contrasenia)){
-            // Guardo en la sesión el ID del usuario
-            session_start();
-            $_SESSION['id_usuario'] = $usuarioBD->id_usuario;
-            $_SESSION['usuario'] = $usuarioBD->usuario;
-            $_SESSION['LAST_ACTIVITY'] = time();
-    
-              
-            header('Location: ' . BASE_URL);
+            if($usuarioBD && password_verify($contrasenia, $usuarioBD->contrasenia)){
+                // Guardo en la sesión el ID del usuario
+                session_start();
+                $_SESSION['id_usuario'] = $usuarioBD->id_usuario;
+                $_SESSION['usuario'] = $usuarioBD->usuario;
+                $_SESSION['LAST_ACTIVITY'] = time();
+        
+                
+                header('Location: ' . BASE_URL);
 
-        } else {
-            return $this->vista->mostrarAcceso('Credenciales incorrectas');
+            } else {
+                return $this->vista->mostrarAcceso('Credenciales incorrectas');
+            }
+        }else{
+             // Si no es una solicitud POST, simplemente mostrar el formulario sin errores
+            return $this->vista->mostrarAcceso();
         }
     }
 
