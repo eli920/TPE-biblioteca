@@ -1,5 +1,12 @@
 <?php
 class AutorVista {
+    private $usuario = null;
+
+    public function __construct($usuario) {
+        $this->usuario = $usuario;
+    }
+
+
     public function mostrarAutores($autores) {
 
         $cantidad = count($autores); //No se utiliza, por el momento

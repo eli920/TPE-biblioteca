@@ -12,6 +12,7 @@
         <nav class="navbar navbar-expand-lg bg-light ">
             <div class="container-fluid " >
                 <a class="navbar-brand" href="<?= BASE_URL . 'libros/'?>">Biblioteca</a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -29,6 +30,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?= BASE_URL . 'cerrar_sesion/'?>">Cerrar sesion</a>
                         </li>
+
+                        
+
                     </ul> 
                 </div>
             </div>
@@ -36,4 +40,10 @@
     </header>
 
     <main class="container mt-3">
+
+    <div class="container">
+        <p>
+        <?php $this->usuario->id_usuario ?>
+        </p>
+    </div>
     

@@ -8,7 +8,7 @@
             return;
         } else {
             header('Location: ' . BASE_URL . 'mostrarAcceso');
-            die();
+            die(); 
         }
     }
 ?>

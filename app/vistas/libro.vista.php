@@ -1,5 +1,10 @@
 <?php
 class LibroVista {
+    private $usuario = null;
+
+    public function __construct($usuario) {
+        $this->usuario = $usuario;
+    }
 
     public function mostrarLibros($libros) {
         // $cantidad = count($libros);
