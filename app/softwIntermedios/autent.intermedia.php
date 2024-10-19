@@ -6,9 +6,6 @@
             $res->usuario->id_usuario = $_SESSION['id_usuario'];
             $res->usuario->usuario = $_SESSION['usuario'];
             return;
-        } else {
-            header('Location: ' . BASE_URL . 'mostrarAcceso');
-            die(); 
-        }
+        } 
     }
 ?>
