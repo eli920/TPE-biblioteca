@@ -10,8 +10,9 @@
 require_once 'app/controladores/libro.controlador.php';
 require_once 'app/controladores/autor.controlador.php';
 require_once 'app/controladores/autent.controlador.php';
-require_once 'app/bibliotecas/respuesta.php';
+require_once 'bibliotecas/respuesta.php';
 require_once 'app/softwIntermedios/autent.intermedia.php';
+require_once 'app/softwIntermedios/autent.verificacion.php';
 
 // base_url para redirecciones y base tag
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
