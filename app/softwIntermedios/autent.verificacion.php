@@ -3,7 +3,7 @@
         if($res->usuario) {
             return;
         } else {
-            header('Location: ' . BASE_URL . 'showLogin');
+            header('Location: ' . BASE_URL . 'mostrar_acceso');
             die();
         }
     }

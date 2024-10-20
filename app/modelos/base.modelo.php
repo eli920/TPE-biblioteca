@@ -28,8 +28,7 @@ class ModeloBase {
                 (1, 'Guillermo Martínez', 'Argentina', 'Guillermo Martínez (1962-) es un destacado escritor...', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXkSgjkrOaShpFgxEmqkiJukJ4ruGufbAV2g&s'),
                 (2, 'Julio Verne', 'Francés', 'Julio Verne (1828-1905) fue un célebre novelista francés...', 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQT5Gc93ToeK-TggVoXJ6ts6Bvolqx_vldIrRmh4cqdn11eUahgSoQXEYl9DlWPKIP8iTUg2mfEKlPe2pDj05xYSnJY9-HvWtqNi4vbljQ'),
                 (3, 'Alfonsina Storni', 'Argentina', 'Alfonsina Storni (1892-1938) fue una influyente poeta...', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjozmwm8D_X-rQ_OxYQBymvPac10FVBdGjmw&s'),
-                (5, 'Eduardo Alfredo Sacheri', 'Argentino', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/03132012Eduardo_sacheri34_01.JPG/375px-03132012Eduardo_sacheri34_01.JPG'),
-                (7, 'Jorge Francisco Isidoro Luis Borges', 'Argentino', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Jorge_Luis_Borges_1951%2C_by_Grete_Stern.jpg/330px-Jorge_Luis_Borges_1951%2C_by_Grete_Stern.jpg');
+    
     
                 CREATE TABLE `libro` (
                     `id_libro` int(11) NOT NULL,
@@ -51,9 +50,6 @@ class ModeloBase {
                 (7, 'La inquietud del Rosal', 'Poesía', 'Losada', 1916, '', 3),
                 (8, 'Mundo de siete pozos', 'Poesía', 'Losada', 1934, '', 3),
                 (9, 'Mariposa', 'Poesía', 'Losada', 1927, '', 3),
-                (30, 'dddddddd', 'ssssssss', 'aaaaaaaaaa', 2024, 'aaaaaaaaaaa', 2),
-                (31, 'ggg', 'sssssssssss', 'ggg', 2020, 'qqqqqqqqqq', 3),
-                (32, 'ggg', 'sssssssssss', 'ggg', 2023, 'qqqqqqqqqq', 5);
     
                 CREATE TABLE `usuario` (
                     `id_usuario` int(11) NOT NULL,

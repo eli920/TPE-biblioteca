@@ -42,10 +42,7 @@ CREATE TABLE `autor` (
 INSERT INTO `autor` (`id_autor`, `nombre_apellido`, `nacionalidad`, `biografia`, `imagen_url`) VALUES
 (1, 'Guillermo Martínez', 'Argentina', 'Guillermo Martínez (1962-) es un destacado escritor y matemático argentino, conocido por sus novelas y ensayos que combinan elementos de la matemática y el misterio. Nació en Bahía Blanca y estudió matemáticas en la Universidad Nacional del Sur. Su novela más conocida, \"Los crímenes de Oxford\" (2003), explora el vínculo entre el crimen y las matemáticas, y ha sido adaptada al cine. Martínez ha recibido varios premios literarios por su trabajo y es reconocido por su habilidad para entrelazar la precisión matemática con la narrativa literaria.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXkSgjkrOaShpFgxEmqkiJukJ4ruGufbAV2g&s'),
 (2, 'Julio Verne', 'Francés', 'Julio Verne (1828-1905) fue un célebre novelista francés, pionero en el género de la ciencia ficción. Nacido en Nantes, Verne es conocido por sus imaginativas novelas de aventuras y exploraciones, como \"Veinte mil leguas de viaje submarino\" y \"La vuelta al mundo en ochenta días\". Su obra, que combina la ciencia y la tecnología con tramas emocionantes, ha influido profundamente en la literatura de aventuras y la ciencia ficción, estableciendo a Verne como uno de los grandes visionarios de su época.\r\n\r\n\r\n\r\n', 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQT5Gc93ToeK-TggVoXJ6ts6Bvolqx_vldIrRmh4cqdn11eUahgSoQXEYl9DlWPKIP8iTUg2mfEKlPe2pDj05xYSnJY9-HvWtqNi4vbljQ'),
-(3, 'Alfonsina Storni', 'Argentina', 'Alfonsina Storni (1892-1938) fue una influyente poeta y escritora argentina, nacida en Sala Capriasca, Suiza. Se mudó a Argentina en su infancia y se convirtió en una figura central de la literatura latinoamericana. Reconocida por su aguda crítica social y su enfoque en temas feministas, Storni dejó un legado duradero con su poesía, ensayos y obras de teatro, marcando un importante precedente para las escritoras de su tiempo.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjozmwm8D_X-rQ_OxYQBymvPac10FVBdGjmw&s'),
-(5, 'Eduardo Alfredo Sacheri', 'Argentino', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/03132012Eduardo_sacheri34_01.JPG/375px-03132012Eduardo_sacheri34_01.JPG'),
-(7, 'Jorge Francisco Isidoro Luis Borges', 'Argentino', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Jorge_Luis_Borges_1951%2C_by_Grete_Stern.jpg/330px-Jorge_Luis_Borges_1951%2C_by_Grete_Stern.jpg');
-
+(3, 'Alfonsina Storni', 'Argentina', 'Alfonsina Storni (1892-1938) fue una influyente poeta y escritora argentina, nacida en Sala Capriasca, Suiza. Se mudó a Argentina en su infancia y se convirtió en una figura central de la literatura latinoamericana. Reconocida por su aguda crítica social y su enfoque en temas feministas, Storni dejó un legado duradero con su poesía, ensayos y obras de teatro, marcando un importante precedente para las escritoras de su tiempo.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjozmwm8D_X-rQ_OxYQBymvPac10FVBdGjmw&s')
 -- --------------------------------------------------------
 
 --
@@ -76,9 +73,6 @@ INSERT INTO `libro` (`id_libro`, `titulo`, `genero`, `editorial`, `anio_publicac
 (7, 'La inquietud del Rosal', 'Poesía', 'Losada', 1916, '', 3),
 (8, 'Mundo de siete pozos', 'Poesía', 'Losada', 1934, '', 3),
 (9, 'Mariposa', 'Poesía', 'Losada', 1927, '', 3),
-(30, 'dddddddd', 'ssssssss', 'aaaaaaaaaa', 2024, 'aaaaaaaaaaa', 2),
-(31, 'ggg', 'sssssssssss', 'ggg', 2020, 'qqqqqqqqqq', 3),
-(32, 'ggg', 'sssssssssss', 'ggg', 2023, 'qqqqqqqqqq', 5);
 
 -- --------------------------------------------------------
 
