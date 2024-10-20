@@ -50,61 +50,61 @@ switch ($parametros[0]) {
         break;
     case 'listar_libros':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new LibroControlador($res);
         $controlador->listarLibros();
         break;
     case 'mostrar_formulario_libro':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new LibroControlador($res);
         $controlador->mostrarFormulario();
         break;    
     case 'nuevo_libro':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new LibroControlador($res);
         $controlador->agregarLibro();
         break;
     case 'eliminar_libro':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new LibroControlador($res);
         $controlador->eliminarLibro($parametros[1]);
         break;
     case 'editar_libro':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new LibroControlador($res);
         $controlador->editarLibro($parametros[1]);
         break;
     case 'listar_autores':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new AutorControlador($res);
         $controlador->listarAutores();
         break;
     case 'mostrar_formulario_autor':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new AutorControlador($res);
         $controlador->mostrarFormulario();
         break; 
     case 'nuevo_autor':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new AutorControlador($res);
         $controlador->agregarAutor();
         break;
     case 'eliminar_autor':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new AutorControlador($res);
         $controlador->eliminarAutor($parametros[1]);
         break;
     case 'editar_autor':
         autentIntermedia($res);
-        verifyAuthMiddleware($res);
+        verifiAutentIntermedia($res);
         $controlador = new AutorControlador($res);
         $controlador->editarAutor($parametros[1]);
         break;

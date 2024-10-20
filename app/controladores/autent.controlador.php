@@ -43,7 +43,7 @@ class AutentControlador {
                 $_SESSION['LAST_ACTIVITY'] = time();
         
                 
-                header('Location: ' . BASE_URL . 'listar_libros/');
+                header('Location: ' . BASE_URL);
 
             } else {
                 return $this->vista->mostrarAcceso('Credenciales incorrectas');

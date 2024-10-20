@@ -1,5 +1,5 @@
 <?php
-    function verifyAuthMiddleware($res) {
+    function verifiAutentIntermedia($res) {
         if($res->usuario) {
             return;
         } else {
