@@ -121,6 +121,6 @@ switch ($parametros[0]) {
         $controlador->cerrarSesion();
     break;
     default: 
-        //Falta poner que se va a mostrar por default
+       $this->mostrarError('Página no encontrada');
     break;
 }

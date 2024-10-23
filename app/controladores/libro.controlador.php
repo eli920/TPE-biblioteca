@@ -13,11 +13,8 @@ class LibroControlador{
         $this->vista= new LibroVista($res ? $res->usuario: null);
         $this->modeloAutores= new AutorModelo();
     }
-   
-    public function mostrarLibros(){
-        $libros= $this->modelo->obtenerLibros();
-        $autores = $this->modeloAutores->obtenerAutores();
 
+    public function recorrerLibros($libros, $autores){
         foreach ($libros as $libro) {
             foreach($autores as $aux){
                 if($aux->id_autor == $libro->id_autor){
@@ -25,6 +22,12 @@ class LibroControlador{
                 }
             }
         }
+    }
+   
+    public function mostrarLibros(){
+        $libros= $this->modelo->obtenerLibros();
+        $autores = $this->modeloAutores->obtenerAutores();
+        $this->recorrerLibros($libros, $autores);
 
         if(!empty($libros))
             return $this->vista->mostrarLibros($libros);
@@ -65,14 +68,7 @@ class LibroControlador{
     public function listarLibros(){
         $libros= $this->modelo->obtenerLibros();
         $autores = $this->modeloAutores->obtenerAutores();
-
-        foreach ($libros as $libro) {
-            foreach($autores as $aux){
-                if($aux->id_autor == $libro->id_autor){
-                    $libro->autor = $aux;
-                }
-            }
-        }
+        $this->recorrerLibros($libros,$autores);
 
         if(!empty($libros))
             return $this->vista->mostrarListaLibros($libros);

@@ -7,8 +7,8 @@
             <b><?=$autor->id_autor?> | <?=$autor->nombre_apellido ?> |<?= $autor->nacionalidad ?></b>  
         </div>
         <div class="actions">
-            <a href="editar_autor/<?= $autor->id_autor ?>" type="button" class='btn btn-warning btn-sm ml-auto'>Modificar</a>
-            <a href="eliminar_autor/<?= $autor->id_autor ?>" type="button" class='btn btn-danger btn-sm ml-auto'>Borrar</a>
+            <a href="<?= BASE_URL . 'editar_autor/' .  $autor->id_autor?>" type="button" class='btn btn-warning btn-sm ml-auto'>Modificar</a>
+            <a href="<?= BASE_URL . 'eliminar_autor/' .  $autor->id_autor?>" type="button" class='btn btn-danger btn-sm ml-auto'>Borrar</a>
         </div>
     </li>
 <?php endforeach ?>

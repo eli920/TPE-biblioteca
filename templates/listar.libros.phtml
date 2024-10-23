@@ -9,8 +9,8 @@
             <?= $libro->sinopsis ?> | <?= $libro->autor->nombre_apellido ?></b>  
         </div>
         <div class="actions">
-            <a href="editar_libro/<?= $libro->id_libro?>" type="button" class='btn btn-warning btn-sm ml-auto'>Modificar</a>
-            <a href="eliminar_libro/<?= $libro->id_libro?>" type="button" class='btn btn-danger btn-sm ml-auto'>Borrar</a>
+            <a href="<?= BASE_URL . 'editar_libro/' .  $libro->id_libro?>" type="button" class='btn btn-warning btn-sm ml-auto'>Modificar</a>
+            <a href="<?= BASE_URL . 'eliminar_libro/' .  $libro->id_libro?>" type="button" class='btn btn-danger btn-sm ml-auto'>Borrar</a>
         </div>
     </li>
 <?php endforeach ?>
